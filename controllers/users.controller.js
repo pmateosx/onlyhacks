@@ -9,7 +9,6 @@ module.exports.getUserById = (req, res, next) => {
             }  else {
                 res.status(200).json(user)
             }
-
         })
         .catch(next)
 }

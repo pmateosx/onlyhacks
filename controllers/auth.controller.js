@@ -12,7 +12,7 @@ module.exports.create = (req, res, next) => {
 
 module.exports.login = (req, res, next) => {
     const { email, password } = req.body
-
+    
     const throwException = () => next(createError(401, 'Incorrect credentials')) 
 
     if ( !email || !password){
@@ -36,7 +36,7 @@ module.exports.login = (req, res, next) => {
                   },
                   process.env.JWT_SECRET || 'changeme',
                   {
-                    expiresIn: '1s'
+                    expiresIn: '30min'
                   }
                 )
               })
